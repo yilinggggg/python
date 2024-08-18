@@ -1,0 +1,24 @@
+import random
+
+def game():
+    print(" 0 ~ 100 猜吧:")
+
+    low = 0
+    up = 100
+    correct = random.randint(low + 1, up - 1)
+    guess = None
+
+    while guess != correct:
+        guess = int(input(f" {low} ~ {up} "))
+
+        if guess > correct:
+            up = guess
+            print(f" {low} ~ {up} ")
+
+        elif guess < correct:
+            low = guess
+            print(f" {low} ~ {up} ")
+
+    print(f"對")
+
+game()
